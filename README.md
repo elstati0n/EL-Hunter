@@ -1,7 +1,7 @@
 # ElHunter — Threat Intelligence Browser Extension
 
 <p align="center">
-  <img src="icons/icon128.png" width="96" alt="ElHunter"/>
+  <img src="icons/icon128.png" width="150" alt="ElHunter"/>
 </p>
 
 <p align="center">
