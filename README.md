@@ -40,7 +40,7 @@ On Gmail, Outlook Web, Yahoo Mail and ProtonMail — two independent detection l
 **Regex URL Check (default ON)**
 All `http://` and `https://` links in the email body are extracted and checked against VirusTotal + AbuseIPDB. Results are shown inline at the top of the page:
 - ✓ `github.com` clean
-- ✕ `evil-domain.ru` (VT:5/72  Abuse:85%)
+- ✕ `evil-domain.com` (VT:5/72  Abuse:85%)
 
 **AI Analysis (requires API key, default OFF)**
 A bar appears at the top of the open email asking "Analyze with AI?". On confirmation, the email content is sent to your configured AI provider which returns a 0–100% phishing probability score and a one-sentence explanation. Supports OpenAI, Anthropic, Google Gemini, Mistral, Groq, OpenRouter, Ollama (local), LM Studio (local) and any OpenAI-compatible endpoint.
@@ -62,8 +62,8 @@ Each rule has two independent matching modes that can be used together or separa
 **IP ON (IP-based match)**
 The server's hosting country is determined by geo-locating its IP address. For example, if `example.com` resolves to an IP hosted in Russia, and you have a Russia rule with IP ON — it matches. This catches servers hosted in a country regardless of what domain name they use.
 
-**`.ru` ON (Domain TLD match)**
-The domain's top-level extension is checked directly — no geo lookup needed. If the visited URL ends in `.ru`, `.cn`, `.ir` etc. and you have the matching country rule with TLD ON — it matches instantly. This is faster and catches domains even if their hosting IP is in another country (e.g. a `.ru` site hosted on Cloudflare in the US).
+**`.com` ON (Domain TLD match)**
+The domain's top-level extension is checked directly — no geo lookup needed. If the visited URL ends in `.com`, `.cn`, `.ir` etc. and you have the matching country rule with TLD ON — it matches instantly. This is faster and catches domains even if their hosting IP is in another country (e.g. a `.com` site hosted on Cloudflare in the US).
 
 Both can be ON simultaneously — either match is enough to trigger the rule.
 
@@ -81,7 +81,7 @@ This controls *which threat levels* trigger a notification (only visible when No
 - **All events** — notification fires for *every* site from this country, even completely clean ones. Useful for high-risk countries where you want visibility into all traffic, not just flagged sites.
 
 **Block ON / Block OFF**
-- **ON** — access to any site from this country is immediately blocked, regardless of VT/AbuseIPDB results. The tab is redirected to the ElHunter block page with the reason shown (e.g. "Blocked: country rule (Russia)" or "Blocked: domain rule (.ru)"). The user can still choose "Proceed anyway" if needed.
+- **ON** — access to any site from this country is immediately blocked, regardless of VT/AbuseIPDB results. The tab is redirected to the ElHunter block page with the reason shown (e.g. "Blocked: country rule (Russia)" or "Blocked: domain rule (.com)"). The user can still choose "Proceed anyway" if needed.
 - **OFF** — sites are not blocked. Only notifications apply.
 
 > Note: When Block is ON, Notify and Telegram are automatically disabled for that rule — because a blocked site never loads, there is nothing to notify about separately.
